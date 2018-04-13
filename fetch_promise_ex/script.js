@@ -12,13 +12,14 @@
 
 	function render(rates) {
 		var curDate = new Date();
+		var curTime = '<tr>' + '<td>' + curDate.getHours() +'</td>'+ ':' + '<td>' + curDate.getMinutes() +'</td>'+'</tr>';
 		var result = '';
 		rates.forEach(function(rate){
 			result += '<tr>' + '<td>' + rate.ccy + '</td>' + ' ' +'<td>' + rate.base_ccy + '</td>' + ' ' +
-					'<td>' + rate.buy + '</td>' + ' ' + ':' + ' ' +'<td>' + rate.sale + '</td>' + '</tr>' + '<br>' +
-					'<tr>' + '<td>' + curDate.getHours() +'</td>'+ ':' + '<td>' + curDate.getMinutes() +'</td>'+'</tr>';
+					'<td>' + rate.buy + '</td>' + ' ' + ':' + ' ' +'<td>' + rate.sale + '</td>' + '</tr>' + '<br>';
+					
 		});	
-		return result;
+		return result + curTime;
 	}
 
 	function output(value){
