@@ -2,7 +2,8 @@ const btnSubmit = document.getElementById('submit');
 const inputValue = document.getElementById('input');
 const toDoList = document.getElementById('todolist');
 
-const createTask = () => {
+const createTask = (e) => {
+	e.preventDefault();
 	const listTask =document.getElementById('listTask');
 	const textOfTask = inputValue.value;
 
@@ -26,7 +27,7 @@ const createTask = () => {
 	btnRemove.addEventListener('click', removeTask);
 };
 
-btnSubmit.addEventListener('click', createTask);
+toDoList.addEventListener('submit', createTask);
 
 
 
